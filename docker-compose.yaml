@@ -2,7 +2,7 @@ version: "3.8"
 services:
     node-app:
       build: .
-       # context: ./dockerfiles -- this 2 lines get use when we have our dockerfile in different directory
-        # dockerfile: Dockerfile
+       # context: ./dockerfiles -- we use context to give the directory path where our dockerfile is.
+        # dockerfile: Dockerfile -- to give the name of the dockerfile
       ports:
         - "3000:3000"
