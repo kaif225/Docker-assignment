@@ -1,9 +1,22 @@
-FROM node:14
-WORKDIR /usr/src/app/
-# I have commented the below 2 lines as i have build the code using npm install locally
-COPY package*.json /usr/src/app/
+FROM node:alpine as builder
+WORKDIR /app
+
+COPY package.json /app
 RUN npm install  
-COPY . .
-EXPOSE 3000
-CMD ["node", "main.js"]
+COPY main.js .
+#EXPOSE 3000
+
+
+#stage 2
+#FROM alpine as stage
+#WORKDIR /app
+#COPY main.js .
+
+FROM alpine
+WORKDIR /app
+#RUN apk add --no-cache nodejs npm
+COPY --from=builder /app .
+#COPY --from=stage /app .
+#CMD ["node", "main.js"]
+CMD apk add --no-cache nodejs npm && node main.js
 
