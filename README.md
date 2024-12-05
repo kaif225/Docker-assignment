@@ -1,4 +1,4 @@
-Steps i haves followed too complete the assigment
+Steps i haves followed t complete the assigment
 1. Downloaded the zip file off the assignment and unzip it
 2. install nodejs in my local machine
 3. moved to the assignment folder and run npm install to generate the node-module and package-lock.json
