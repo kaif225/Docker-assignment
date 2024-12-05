@@ -8,7 +8,9 @@ pipeline {
             }
         }
     stage('test') {
-       sh "building"
+      steps {   
+        sh "building"
+      }    
     }
     }
 }    
