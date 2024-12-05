@@ -1,6 +1,7 @@
 FROM node:alpine as builder
 WORKDIR /app
 #adadadasss
+#adasda';l
 
 COPY package.json /app
 RUN npm install  
